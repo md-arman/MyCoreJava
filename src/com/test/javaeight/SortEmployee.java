@@ -2,7 +2,6 @@ package com.test.javaeight;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Employee
 {
@@ -39,8 +38,8 @@ class Employee
     public void setDept(int dept) {
         this.dept = dept;
     }
-
 }
+
 
 public class SortEmployee {
 
@@ -51,11 +50,11 @@ public class SortEmployee {
         Employee e4 = new Employee("Iron", "Heart", 1);
         Employee e1 = new Employee("Captain", "Marvel", 1);
 
-
         List<Employee> list = new ArrayList<Employee>();
         Collections.addAll(list, e1, e2, e3, e4, e5);
         //list.add(e1);list.add(e2);list.add(e3);
 
+        //reverse sort by FirstName, then by lastname, then reverse sort by dept
         List<Employee> sorted = list.stream()
                 .sorted(Comparator.comparing(Employee::getFirstName, Comparator.reverseOrder())
                         .thenComparing(Employee::getLastName)
@@ -68,7 +67,6 @@ public class SortEmployee {
             Employee e = (Employee) itr.next();
             System.out.println(e.getFirstName()+" "+e.getLastName()+" "+e.getDept());
         }
-
-
     }
+
 }
