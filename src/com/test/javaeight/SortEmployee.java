@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 class Employee
 {
-    String firstName;
-    String lastName;
-    int dept;
+    private String firstName;
+    private String lastName;
+    private int dept;
 
     public Employee(String firstName, String lastName, int dept) {
         this.firstName = firstName;
