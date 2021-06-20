@@ -1,6 +1,6 @@
 package com.test.immutable;
 
-public class Age {
+public class Age implements Cloneable {
 
     private int day;
     private String month;
@@ -20,4 +20,10 @@ public class Age {
     public void setMonth(String month) {
         this.month = month;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
 }

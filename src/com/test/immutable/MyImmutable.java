@@ -7,10 +7,11 @@ public final class MyImmutable{
     private final Age age;
 
 
-    public MyImmutable(int id, String name, Age age) {
+    public MyImmutable(int id, String name, Age age) throws CloneNotSupportedException {
         this.id = id;
         this.name = name;
-        Age clonedObj = new Age();
+        Age clonedObj = (Age) age.clone();
+        /*Age clonedObj = new Age();*/
         clonedObj.setDay(age.getDay());
         clonedObj.setMonth(age.getMonth());
         this.age = clonedObj;
@@ -24,8 +25,9 @@ public final class MyImmutable{
         return name;
     }
 
-    public Age getAge() {
-        Age clonedObj = new Age();
+    public Age getAge() throws CloneNotSupportedException {
+        Age clonedObj = (Age) age.clone();
+        /*Age clonedObj = new Age();*/
         clonedObj.setDay(this.age.getDay());
         clonedObj.setMonth(this.age.getMonth());
         return clonedObj;
