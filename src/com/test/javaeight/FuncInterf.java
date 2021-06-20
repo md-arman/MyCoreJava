@@ -7,7 +7,7 @@ interface InterfaceSquareIt { public int m1(int x); }
 interface InterfaceSum  { public void add(int x, int y); }
 
 
-public class JavaEightFuncInterf {
+public class FuncInterf {
     public static void main(String[] args) {
 
         InterfaceSquareIt i = z -> z*z;
