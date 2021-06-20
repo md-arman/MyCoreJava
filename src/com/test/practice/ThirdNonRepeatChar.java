@@ -7,6 +7,7 @@ public class ThirdNonRepeatChar {
         char [] ch = str.toCharArray();
 
         int counter = 0;
+        boolean absentFlag= false;
         //O(n^2)
         for(int i=0; i<ch.length; i++)
         {
@@ -24,8 +25,11 @@ public class ThirdNonRepeatChar {
             if(counter==3)
             {
                 System.out.println(c1);
+                absentFlag=true;
                 break;
             }
         }
+        if(!absentFlag)
+            System.out.println("No third repeated char exists");
     }
 }
